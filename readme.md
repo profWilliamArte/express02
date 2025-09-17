@@ -17,17 +17,17 @@ Aprender a organizar un proyecto de Express dividiendo la lógica en tres capas 
 Este es el mapa de nuestra aplicación. 
 Cada carpeta tiene un propósito específico [2, 3]:
 
-/repuestos-backend
-├── /config
-│   └── db.js             # Configuración de la base de datos
-├── /routes               # Rutas de la API
-├── /controllers          # Lógica asociada a las rutas
-├── /models               # Modelos de datos
-├── app.js                # Archivo principal
-├── .env                  # Variables de entorno
-├── .gitignore
-├── package.json
-└── package-lock.json
+/repuestos-backend.
+├── /config.
+│   └── db.js             # Configuración de la base de datos.
+├── /routes               # Rutas de la API.
+├── /controllers          # Lógica asociada a las rutas.
+├── /models               # Modelos de datos.
+├── app.js                # Archivo principal.
+├── .env                  # Variables de entorno.
+├── .gitignore.
+├── package.json.
+└── package-lock.json.
 
 
 ---
