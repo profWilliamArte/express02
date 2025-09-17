@@ -14,23 +14,21 @@ Aprender a organizar un proyecto de Express dividiendo la lógica en tres capas 
 
 ### 📂 Estructura del Proyecto Final
 
-Este es el mapa de nuestra aplicación. Cada carpeta tiene un propósito específico [2, 3]:
+Este es el mapa de nuestra aplicación. 
+Cada carpeta tiene un propósito específico [2, 3]:
 
-├── /config     
-    └── db.js         
-        # Configuración y conexión a la base de datos (MySQL) 
-├── /controllers    
-    └── juegos.js     
-        # La lógica de negocio (el "cerebro" de las rutas) 
-├── /routes    
-    └── juegos.js     
-        # Las rutas o endpoints (las URLs de la API) 
-├── .env              
-    # Variables de entorno para datos sensibles (NO se sube a GitHub) 
-├── app.js            
-    # Archivo principal que une todo (el "orquestador") 
-└── package.json      
-    # Dependencias y scripts del proyecto
+/repuestos-backend
+├── /config
+│   └── db.js             # Configuración de la base de datos
+├── /routes               # Rutas de la API
+├── /controllers          # Lógica asociada a las rutas
+├── /models               # Modelos de datos
+├── app.js                # Archivo principal
+├── .env                  # Variables de entorno
+├── .gitignore
+├── package.json
+└── package-lock.json
+
 
 ---
 
