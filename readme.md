@@ -201,18 +201,41 @@ Ahora nuestro `app.js` es mucho más limpio. Su trabajo es configurar el servido
 
 ---
 
-### 🎓 Práctica para Casa: API de Repuestos
+## 🎓 Práctica para Casa: API para una Tienda (tienda2025)
 
-Ahora es tu turno de aplicar lo aprendido. Tu misión es crear una nueva API desde cero para gestionar repuestos de autos, utilizando la estructura profesional que vimos en clase.
+¡Es tu turno de construir una API desde cero! El objetivo es aplicar la estructura profesional que aprendimos en clase (`/config`, `/routes`, `/controllers`) para crear un backend que gestione los datos de una tienda.
 
-1.  **Base de Datos**: Utiliza el siguiente script SQL para crear y poblar la base de datos `tienda2025`.
+Toda la información que necesitas está en este mismo repositorio.
 
-2.  **Requisitos**:
-    *   Crea un nuevo proyecto desde cero.
-    *   Implementa la estructura de carpetas `/config`, `/controllers`, `/routes`.
-    *   Crea los siguientes endpoints:
-        *   `GET /api/repuestos`: Debe devolver todos los repuestos.
-        *   `GET /api/categorias`: Debe devolver todas las categorías de repuestos.
-        *   *(Opcional Avanzado)* `GET /api/repuestos/:id`: Debe devolver un solo repuesto según su ID.
+#### Paso 1: Configura la Base de Datos
 
-¡Mucho éxito!
+1.  **Importa la Base de Datos**: Busca el archivo `tienda2025.sql` en este repositorio e impórtalo en tu gestor de MySQL (como phpMyAdmin, DBeaver, etc.). Esto creará la base de datos `tienda2025` con todas sus tablas y datos de ejemplo.
+2.  **Actualiza tu Archivo `.env`**: Cambia el valor de `DB_NAME` para que apunte a la nueva base de datos. Debería quedar así:
+    ```
+    DB_NAME=tienda2025
+    ```
+
+#### Paso 2: Construye la API
+
+Crea un nuevo proyecto desde cero siguiendo la estructura modular que vimos en clase. Tu misión es desarrollar los siguientes endpoints funcionales:
+
+1.  **Endpoint de Clientes**:
+    *   Crea un `clientesController.js` y un `clientes.js` en la carpeta de rutas.
+    *   **`GET /api/clientes`**: Debe devolver una lista de todos los clientes de la base de datos.
+
+2.  **Endpoint de Productos**:
+    *   Crea un `productosController.js` y un `productos.js` en la carpeta de rutas.
+    *   **`GET /api/productos`**: Debe devolver una lista de todos los productos.
+    *   **`GET /api/categorias`**: Debe devolver la lista de todas las categorías de productos.
+
+3.  **Endpoint de Pedidos**:
+    *   Crea un `pedidosController.js` y un `pedidos.js` en la carpeta de rutas.
+    *   **`GET /api/pedidos`**: Debe devolver una lista de todos los pedidos.
+
+#### Desafío Adicional (Opcional)
+
+Si te sientes con confianza, intenta crear un endpoint que reciba un parámetro en la URL:
+
+*   **`GET /api/productos/:id`**: Debe devolver los detalles de **un solo producto** basado en el `id` que se le pasa en la URL.
+
+¡Mucho éxito! Esta práctica es clave para afianzar tus habilidades como desarrollador backend.
