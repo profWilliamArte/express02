@@ -205,17 +205,7 @@ Ahora nuestro `app.js` es mucho más limpio. Su trabajo es configurar el servido
 
 Ahora es tu turno de aplicar lo aprendido. Tu misión es crear una nueva API desde cero para gestionar repuestos de autos, utilizando la estructura profesional que vimos en clase.
 
-1.  **Base de Datos**: Utiliza el siguiente script SQL para crear y poblar la base de datos `dbrepuestos`.
-
-    ```sql
-    -- [AQUÍ IRÁ EL SCRIPT SQL DE LA BASE DE DATOS DE REPUESTOS CUANDO ME LO PASES]
-    -- Ejemplo:
-    -- CREATE DATABASE dbrepuestos;
-    -- USE dbrepuestos;
-    -- CREATE TABLE categorias (...);
-    -- CREATE TABLE repuestos (...);
-    -- INSERT INTO ...
-    ```
+1.  **Base de Datos**: Utiliza el siguiente script SQL para crear y poblar la base de datos `tienda2025`.
 
 2.  **Requisitos**:
     *   Crea un nuevo proyecto desde cero.
