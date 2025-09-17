@@ -16,8 +16,8 @@ Aprender a organizar un proyecto de Express dividiendo la lógica en tres capas 
 
 Este es el mapa de nuestra aplicación. 
 Cada carpeta tiene un propósito específico [2, 3]:
-
-/repuestos-backend.
+```
+/repuestos-backend
 ├── /config.
 │   └── db.js             # Configuración de la base de datos.
 ├── /routes               # Rutas de la API.
@@ -28,7 +28,7 @@ Cada carpeta tiene un propósito específico [2, 3]:
 ├── .gitignore.
 ├── package.json.
 └── package-lock.json.
-
+```
 
 ---
 
