@@ -1,0 +1,53 @@
+Guía Detallada: Backend Node.js, Express y MySQL con Buenas Prácticas
+Por qué usar una estructura organizada con carpetas
+Organizar el proyecto en carpetas separadas responde a la necesidad de mantener el código modular, claro y escalable. Esto es fundamental para proyectos que crecen, evitando que todo quede mezclado en un solo archivo monolítico. Cada carpeta tiene una responsabilidad específica:
+
+/config: Aquí se alojan las configuraciones del proyecto, como la conexión a la base de datos. Centralizar la configuración facilita cambios posteriores y asegura que datos sensibles como credenciales se manejen separado del código principal.
+
+/routes: En esta carpeta se definen las rutas o endpoints accesibles desde el exterior (API). Separar las rutas permite gestionar fácilmente los puntos de entrada donde la API recibirá las peticiones.
+
+/controllers: Contienen la lógica que controla el comportamiento de las rutas. Reciben peticiones, ejecutan consultas o procesos, y devuelven respuestas. Esta separación facilita pruebas unitarias y mantenimiento, desacoplando la definición de rutas de la lógica de negocio.
+
+/models: Aquí se definen los modelos de datos o esquema, representando las tablas o documentos en la base de datos y encapsulando consultas SQL o interacción con datos. Facilita mantener organizada la capa de acceso a datos o usar ORMs si se desea.
+
+app.js: Archivo principal que configura la app Express, importa middlewares, rutas y arranca el servidor. Centraliza la inicialización y la configuración global del servidor.
+
+.env: Archivo para variables de entorno que guardan datos sensibles (credenciales, puertos). No debe ser parte del repositorio público para proteger la seguridad.
+
+Explicación detallada de conceptos y herramientas
+Express
+Es un framework que simplifica enormemente la construcción de servidores web y APIs REST. Proporciona un sistema intuitivo para definir rutas HTTP, middlewares y gestionar peticiones/respuestas. Permite crear aplicaciones rápidas y mantenibles.
+
+mysql2
+Cliente para conectar Node.js a bases de datos MySQL usando promesas y pool de conexiones. El pool mantiene varias conexiones abiertas para mejorar rendimiento bajo alta concurrencia, evitando crear conexiones nuevas para cada consulta.
+
+cors
+Middleware necesario para permitir que aplicaciones frontend (que corren en otro dominio o puerto) puedan comunicarse con el backend sin ser bloqueadas por políticas de seguridad del navegador (CORS).
+
+dotenv
+Carga configuraciones sensibles desde un archivo .env al entorno del proceso. Mantiene separadas las credenciales fuera del código, permite que el mismo código funcione en diferentes ambientes (dev, test, prod) solo cambiando variables.
+
+nodemon
+Herramienta para desarrollo que detecta cambios en el código y reinicia automáticamente el servidor. Elimina la necesidad de pararlo y arrancarlo manualmente al hacer modificaciones, haciendo el workflow más ágil.
+
+Flujo del proyecto y responsabilidades
+Configuración (config/db.js): Aquí se centraliza la conexión a la base de datos usando un pool para eficiencia. Cambios en la configuración se hacen solo aquí, evitando duplicar credenciales en todo el código.
+
+Definición de rutas (/routes): Aquí se definen las URL y métodos (GET, POST, etc.) que los clientes usarán.
+
+Lógica de negocio (/controllers): Los controladores contienen el código que, tras recibir una solicitud, ejecuta acciones como consultas, validaciones y devuelve respuestas.
+
+Modelos de datos (/models): Abstraen y encapsulan las interacciones con la base de datos y definen la estructura y reglas de los datos.
+
+App.js: Actúa como director central, importando rutas y configuraciones, arrancando el servidor y aplicando middlewares globales (como cors y json parser).
+
+Beneficios de esta organización
+Facilita la colaboración en equipo, porque cada desarrollador puede enfocarse en áreas específicas sin interferencias.
+
+Permite escalar la aplicación añadiendo nuevas funcionalidades sin desorden.
+
+Hace más sencillo el testing y mantenimiento, al tener código modular y responsabilidad única por módulo.
+
+Mejora la seguridad y gestión de configuraciones sensibles.
+
+Adapta el proyecto a buenas prácticas comunes en la industria que preparan para proyectos profesionales.
